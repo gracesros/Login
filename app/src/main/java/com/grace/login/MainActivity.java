@@ -2,6 +2,7 @@ package com.grace.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -48,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
                             "La contraseña en invalida"
                     );
                 }
+                Intent intent = new Intent(getApplicationContext(),
+                        HomeActivity.class);
+                intent.putExtra("EXTRA", new User("name", 20));
+                startActivity(intent);
+                finish();
             }
         });
     }
